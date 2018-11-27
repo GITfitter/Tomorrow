@@ -1,21 +1,22 @@
 2018年11月27日面试题
 ===================
-#1、说出3种web安全问题
-答：(1)sql注入；
-   (2)XSS跨站脚本攻击；
-   (3)CSRF：跨站请求伪造。
-#2、
-#let fun=()=>{ console.log(this.foo); } 
-#let c={ 
-#        foo:'foo', 
-#        baz:'bar', 
-#        say(){
-#                fun(); 
-#                (function(){ console.log(this.baz); }()) 
-#          } 
-#   } 
-#  var foo='baz'; 
-#  c.say();
+1. 说出3种web安全问题
+>答：(1)sql注入；
+>   (2)XSS跨站脚本攻击；
+>   (3)CSRF：跨站请求伪造。
+2. 
+```javascript
+let fun=()=>{ console.log(this.foo); } 
+let c={ 
+       foo:'foo', 
+        baz:'bar', 
+       say(){
+                fun(); 
+                (function(){ console.log(this.baz); }()) 
+          } 
+   } 
+  var foo='baz'; 
+  c.say();
 答：'baz' undefined.
 # 3、数组移除第一个元素的方法有哪些？
 答：(1)delete arr[0];
