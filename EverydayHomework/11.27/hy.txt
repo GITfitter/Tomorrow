@@ -1,0 +1,52 @@
+﻿1、最常见的安全问题：
+	1）、SQL注入：SQL 注入之所以存在，主要是因为工程师将外部的输入直接嵌入到将要执行的 SQL 语句中了，黑客可以利用这一点执行SQL指令来达到自己目的；
+	2）、XSS攻击：XSS攻击是在HTML里代码执行了用户输入；
+	3）、CSRF攻击（跨站点请求伪造）：伪造请求，冒充用户在站内正常操作。
+2、baz，bar；
+3、shift、delete、splice；
+4、display：none；visibility：hidden；Opacity：0；position ：left，right，top，buttom超出屏幕；transfrom：rotateY（-90deg）；
+5、Object
+      8种；
+6、var x = 0;
+        for(let i = 1 ; i <= 400 ; i++){
+            (function(){
+                var y = [...i.toString()];
+                for (let j = 0; j < y.length; j++){
+                    if(y[j] == 1){
+                        x++;
+                    }
+                }
+                console.log(x);
+            }())
+        }
+7、
+     1）：GET请求会将参数跟在URL后进行传递，而POST请求则是作为HTTP消息的实体内容发送给WEB服务器。
+      2）：GET方式提交的数据最多只能是2k，而POST没有限制；
+      3）：GET方式请求的数据会被浏览器缓存起来，不安全；
+      4）：在客户端使用get请求时,服务器端使用Request.QueryString来获取参数,而客户端使用post请求时,服务器端使用Request.Form来获取参数；
+8、 ==值比较大小，不比较类型；
+     ===既比较内容也比较类型，且+0 = -0，NaN不等于NaN；
+     Object.is( )，和===基本一致，但 +0 不等于 -0 ，NaN 等于 NaN；
+9、
+1）作为一个函数调用
+	function myFn(a, b) {
+               	   return a + b;
+	}
+	myFn(10, 2);
+
+
+2）函数作为方法调用
+	var myObject = {
+	    firstName: "huang",
+	    lastName: "weisheng",
+	    fullName: function() {
+	        return this.firstName + this.lastName;
+	    }
+	}
+	myObject.fullName();
+3）使用构造函数调用
+4）作为函数方法调用
+	call() 和apply() 
+
+10、深拷贝：JSON对象的parse和stringify；
+       浅拷贝：对象直接引用；
