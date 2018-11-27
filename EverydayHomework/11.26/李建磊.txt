@@ -5,7 +5,7 @@
        <artical></artical>
        <footer></footer>
 
-   2>Css3新特性：
+   2>Css3新特性：：
        Css3选择器，背景和边框，文字特效，2D/3D转换，动画，多列布局，用户界面
 
  
