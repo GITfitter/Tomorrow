@@ -1,6 +1,6 @@
 # 20181124作业
 
-## 说出3中web安全问题
+## 1. 说出3中web安全问题
 
 >1. XSS(跨站脚本攻击)
 >    在URL或者页面输入框中插入js代码。
@@ -109,16 +109,13 @@ console.log(arr.length); // 157
 
 ## 10. JS深拷贝浅拷贝
 
-> 深拷贝： 迭代复制所有对象的拷贝方式
-> 浅拷贝： 仅复制最顶层对象的拷贝方式
-
 ```javascript
-// 深拷贝
+// 深拷贝：迭代复制所有对象的拷贝方式  
 const arr = [1, 2, 3, 4];
 let deepClone = obj => JSON.parse(JSON.stringify(obj));
 const newarr = deepClone(arr);
 
-// 浅拷贝
+// 浅拷贝：仅复制最顶层对象的拷贝方式
 const obj1 = {a: 1};
 const obj2 = Object.assign({}, obj1);
 ```

@@ -4,16 +4,16 @@
 	let fun=()=>{
 		console.log(this.foo);
 		}
-		let  c={
+let  c={
 		foo:'foo',
 		baz:'bar',
 		say(){
-		fun();
-		(function(){
-			console.log(this.baz);
-		}())
+            fun();
+            (function(){
+                console.log(this.baz);
+            }())
 		}
-		}
+}
 		var foo='baz';
 		c.say();
 3. 数组移除第一个元素的方法有哪些？
