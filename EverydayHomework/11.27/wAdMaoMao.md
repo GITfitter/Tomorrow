@@ -1,10 +1,10 @@
 2018年11月27日面试题
 ===================
-1. 说出3种web安全问题
+## 1. 说出3种web安全问题
 >答：(1)sql注入；
 >   (2)XSS跨站脚本攻击；
 >   (3)CSRF：跨站请求伪造。
-2. 
+## 2. 
 ```javascript
 let fun=()=>{ console.log(this.foo); } 
 let c={ 
@@ -17,15 +17,16 @@ let c={
    } 
   var foo='baz'; 
   c.say();
-答：'baz' undefined.
-# 3、数组移除第一个元素的方法有哪些？
-答：(1)delete arr[0];
-    (2)arr.shift();
-    (3)arr.splice(0,1);
-    (4)arr.filter((value,index,arr)=>index!==0);
-    (5)newarr=arr.slice(1);
-    等等...
-# 4、使元素消失的方法有哪些？
+  ```
+>答：'baz' undefined.(this指向问题)
+## 3. 数组移除第一个元素的方法有哪些？
+>答：(1)delete arr[0];
+>   (2)arr.shift();
+>    (3)arr.splice(0,1);
+>   (4)arr.filter((value,index,arr)=>index!==0);
+>   (5)newarr=arr.slice(1);
+>  等等...
+## 4. 使元素消失的方法有哪些？
 答：(1)display:none;
    (2)opacity:0;
    (3)visibility:hidden;
