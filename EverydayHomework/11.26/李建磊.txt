@@ -1,0 +1,138 @@
+1.
+  1><header></header>
+       <nav></nav>
+       <section></section>
+       <artical></artical>
+       <footer></footer>
+
+   2>Css3新特性：
+       Css3选择器，背景和边框，文字特效，2D/3D转换，动画，多列布局，用户界面
+
+ 
+   3>ES5中array新增api:
+          Array.every();
+          Array.some();
+          Array.filter();
+          Array.foreach();
+          Array.map();
+          Array.reduce();
+      对象新增的api:
+          Object.create(原型/null);创建对象的另一种方法。
+
+2.
+     事件对象兼容：var e =e || window.event;
+     事件对象target兼容：window.addEventListener?e.target:e.srcElement;
+     默认事件兼容：window.preventDefault?e.preventDefault():e.returnValue=false;
+     阻止冒泡兼容:window.stopPropagation?e.stopPropagation():e.cancelBubble=true;
+
+3.所谓三层结构（结构层HTML，表现层CSS，动作层JS）
+   浏览器首先开始从上到下解析html，并将标签转化为DOM节点，遇到link标签引用的外部css文件，会将css内容加载到页面当中并且开始渲染整个页面，遇到js代码，就会立刻去执行JavaScript代码，整个html和css解析和渲染过程会停止，等待脚本执行完毕后在开始解析渲染，所以如果将js代码写在head中获取节点时会报错有可能出现特殊情况，比如某个元素脱离当前文档流，会影响上文和下文的布局，浏览器会倒回去重新渲染受影响的元素，我们称这个回退的过程叫回流。
+
+4.
+ 1》作用域链： 
+      函数在执行的时候会创建一个属于自己独一无二的执行器上下文对象，一个执行期上下文对象定义了函数的执行环      境，多次调用同一个函数，会创建多个执行期上下文，多个执行期上下文组成的集合就叫做作用域链。
+
+ 2》原型链：如果一个原型对象的原型不为null，我们就称之为原型链，原型链是由一些用来继承和共享属性的对象组成的有限对象链。
+
+
+5.
+  1》 function aa(a,b){
+          return new Set([...a,...b]);
+       }
+
+   
+2》function lu(a,b){
+          var cc=[];
+          var dd=a.concat(b);
+          for(var i=0;i<dd.length;i++){
+             if(cc.indexOf(dd[i])==-1){
+                cc.push(dd[i]);
+             }
+          }         
+          return cc;
+       }
+
+
+ 3》function aa(a,b){
+          return new Set(a.concat(b));
+       }
+
+
+
+ 4》function haq(a,b){
+          var dd=a.concat(b);
+          for(var i=0;i<dd.length;i++){
+             for(var j=i+1;j<dd.length;j++){
+                if(dd[i]==dd[j]){
+                    delete dd[j];
+
+                }
+
+             }
+
+          }
+          return dd;
+       }
+
+       function re(arr){    
+           for(var i = 0; i < arr.length; i++) {
+           if(arr[i] == undefined) {
+          arr.splice(i,1);
+         i = i - 1;
+       }
+      }
+      return arr;
+   };
+
+     console.log(re(haq(a,b)));
+
+6.json对象是一种轻量级的数据交互格式，具有自我描述性和层级结构，它属于js对象的一个子集，所以JS可以很轻松的处理json。
+
+7.bar bar undefined bar
+
+8.
+  1》浏览器会自动开启一个线程来处理这个请求，同时在远程DNS服务器上启动一个DNS查询，使浏览器获得相应的IP地址。
+  2》浏览器与远程web服务器通过TCP三次握手协商共同建立一个TCP/IP连接。
+  3》连接成功后，浏览器会通过该链向远程服务器发送http的get请求，服务器接受请求并找到再使用http响应返回资源，值为200时，响应成功。
+  4》web服务器提供资源服务，客户端开始下载资源。
+
+9.
+  原理：垃圾收集器会定期周期性找出那些不在继续使用的变量，然后释放其内存。
+  1》标记清除法：
+         函数声明一个变量的时候，就将这个变量标记为“进入环境”，变量离开环境时，则将其标记为“离开环境”垃圾回收器完成内存清楚工作，销毁那些带标记的值并回收他们所占用的内存空间。
+
+ 2》引用计数法：
+         当声明了一个变量并将一个引用类型值赋给该变量时，则这个值的引用次数就是1。如果同一个值又被赋给另一个变量，则该值的引用次数加1。相反，如果包含对这个值引用的变量又取得了另外一个值，则这个值的引用次数减1当垃圾回收器下次再运行时，它就会释放那些引用次数为0的值所占用的内存。
+
+10.
+   短路运算符一般有：&&、||，其原理是：当有多个表达式时，左边的表达式值可以确定结果时，就不再继续运算右边的表达式的值。
+
+李建磊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
