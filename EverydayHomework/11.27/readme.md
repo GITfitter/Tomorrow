@@ -1,16 +1,21 @@
-﻿# 2018年11月27日面试题
+# 2018年11月27日面试题
 1. 说出3种web安全问题
-2. let  c={
-this.foo='foo';
-this.baz='bar';
-var self=this;
-this.say(){
-fun();
-}
-}
-let fun=()=>{
-console.log(this.foo);
-}
+2. 	
+	let fun=()=>{
+		console.log(this.foo);
+		}
+		let  c={
+		foo:'foo',
+		baz:'bar',
+		say(){
+		fun();
+		(function(){
+			console.log(this.baz);
+		}())
+		}
+		}
+		var foo='baz';
+		c.say();
 3. 数组移除第一个元素的方法有哪些？
 4. 使元素消失的方法有哪些？
 5. var arr=[];
