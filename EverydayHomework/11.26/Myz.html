@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+    1.列举5个HTML5标签，8个CSS3新特性，3个ECMAScript 5新API。
+    <header></header><fotter></fotter><section></section><article></article><nav><nav></nav>
+    新增选择器,新增边框背景设定,2d,3d过渡效果转换,帧动画,响应式
+    2.事件对象兼容性写法，事件对象target兼容性写法，阻止默认事件写法，阻止冒泡事件的写法
+        target兼容写法:
+        target=e.target||e;
+        阻止事件冒泡:
+
+        document.getElementById("a").onclick = function (e) {
+            alert("a");
+            stopM(e);
+        }
+        document.getElementById("b").onclick = function (e) {
+            alert("b");
+            stopM(e);
+        }
+        document.getElementById("c").onclick = function (e) {
+            alert("c");
+            stopM(e);
+        }
+    
+        function stopM(e) {
+            if (e.stopPropagation) {
+                e.stopPropagation();//阻止事件冒泡兼容写法
+            } else {
+                e.cancelBubble = true;
+            }
+        }
+        阻止默认事件写法:href=“javascript：；
+        标准写法:
+        document.getElementById("abc").onclick = function (e) {
+            e = window.event || e;
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                e.returnValue = false;
+            }
+        }
+        事件对象写法:	
+        if（event.preventDefault）｛
+            event.preventDefault（）；
+        else｛
+            event.returnValue == false；
+        ｝
+        
+    3.三层结构渲染
+    结构层HTML、表现层CSS、行为层JavaScript
+    4.解释作用域链与原型链
+    作用域链原理和原型链很类似，如果这个变量在自己的作用域中没有，那么它会寻找父级的，直到最顶层。
+    原型链
+    prototype本身也是一个object，所以它也有__proto__。然后就可以不断的往上链，直到Object.prototype停止，这个object具有一个特殊的值，即null。
+    5.用JS实现一个数组合并的方法（要求去重）(3种）
+        
+    6.json对象与JavaScript对象的含义与区别
+    json是一种数据的格式,而javascript对象是对象的实例,json可以跨平台传输,js对象不可以跨平台调用
+    7.var fkx={
+          foo:'bar',
+          way:function(){
+               var self=this;
+               console.log(this.foo)；
+               console.log(self.foo)；
+               (function(){//立即执行
+
+                     console.log(this.foo)
+                     console.log(self.foo)
+               }())；
+          }
+   }
+    fkx.way()
+    8.从输入url到获取页面的完整过程
+    1.  域名解析2. 建立TCP连接3. 发起HTTP请求4. 服务器响应HTTP请求5. 浏览器渲染页面
+
+    9.垃圾回收机制的两种方法 (不了解,待学习)
+    1.标记清除法2.引用计数法
+    10.介绍短路运算符
+    &&且运算符:如果第一个布尔值为true,则返回第二个值(返回值,不是布尔值),如果第一个值为false则返回第一个值
+    ||或运算符:如果第一个值为true则返回第一个值,且不再对第二个值求值
+    </pre>
+
+</body>
+<script>
+    var fkx = {
+
+        foo: 'bar',
+        way: function () {
+            var self = this;
+            //    console.log(this);
+            console.log(this.foo), //bar
+                console.log(self.foo), //bar
+                (function () {
+                    console.log(this.foo) //undefind,因为this指向window
+                    console.log(self.foo) //foo,输出查看,最后一个没有懂...
+                }());
+        }
+    }
+    fkx.way()
+    5.
+    //set方法
+    // let a=new Array("a","b",'c');
+    // let b=new Array("a","b","f");
+    // let c=[...a,...b];
+    // console.log(c);
+    // let data=new Set(c);
+    // console.log(data)//Set(4) [ "a", "b", "c", "f" ]
+    // console.log([...data])//Array(4) [ "a", "b", "c", "f" ];
+
+    //concat
+    let a=new Array("a","b",'c');
+    let b=new Array("a","b","f");
+    var c=a.concat(b);
+    console.log(c);
+    var d=[];
+    for(let i=0;i<c.length;i++){
+         if(d.indexOf(c[i])==-1){
+            d.push(c[i]);
+        }
+
+    }
+   console.log(d);//Array(4) [ "a", "b", "c", "f" ]
+</script>
+
+</html>
