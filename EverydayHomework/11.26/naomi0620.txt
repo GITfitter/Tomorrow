@@ -1,0 +1,95 @@
+﻿1.列举5个HTML5标签，8个CSS3新特性，3个ECMAScript 5新API。
+<nav></nav>
+<section></section>
+<aside></aside>
+<article></article>
+<footer></footer>
+新增选择器
+背景边框
+文字特效
+2d、3d转换
+动画 帧动画
+多列布局
+自定义字体
+弹性盒子
+arr.forEach()
+arr.map();
+arr.filter()
+2.事件对象兼容性写法，事件对象target兼容性写法，组织默认事件写法，阻止冒泡事件的写法
+e=e||window.event
+e.target=e.target||e.srcElement
+e.cancleBubble=true
+e.stopPropagation();
+return false;
+e.preventDefault()
+3.三层结构渲染
+进入页面后引入的css和HTML同时解析
+遇见script立即执行script语句
+4.解释作用域链与原型链
+作用域链：函数中可以访问window作用域中的对象，变量 但是在全局作用域不能访问函数中的变量和对象
+  函数内部函数可以放问上级函数的变量  这样就形成了作用域链  这个作用域链是单向的
+
+原型链：当调用对象中的方法时 对象自身没有就会一级一级向他的圆形对象中查找
+5.用JS实现一个数组合并的方法（要求去重）(3种）
+let collapes=(a1,a2)=>{
+			let s=new Set([...arr1,...arr2]);
+			return s;
+		}
+		
+		let collapes1=(a1,a2)=>{
+			let s=new Set([...a1.concat(a2)]);
+			return s;
+			
+		}
+		
+		let collapes2=(a1,a2)=>{
+			let s=new Set([...Array.assign(a1,a2)]);
+			return s;
+		}
+		let collapes3=(a1,a2)=>{
+			let s=[...a1,...a2];
+			let newArr=[];
+			s.forEach(x=>{
+				if(newArr.indexOf(x)==-1){
+					newArr.push(x);
+				};
+			});
+			return newArr;
+		}
+6.json对象与JavaScript对象的含义与区别
+json
+json是一种轻量级的数据交换格式
+可以传输写法严格 key与value必须加“”
+object 
+是类的实例
+不可以传输
+key不加“”
+7.var fkx={
+          foo:'bar',
+          way:function(){
+               var self=this;
+               console.log(this.foo)；
+               console.log(self.foo)；
+               (function(){
+                     console.log(this.foo)
+                     console.log(self.foo)
+               }())；
+          }
+   }
+  fkx.way()
+bar  bar  undefined  bar
+8.从输入url到获取页面的完整过程
+获取域名对应的IP地址
+浏览器与服务器建立tcp连接
+浏览器向服务器端发送http请求（请求和传输数据）
+.服务器接受到这个请求后，根据路径参数，经过后端的一些处理生成html页面代码返回给浏览器
+浏览器拿到完整的html页面代码开始解析和渲染，如果遇到引用的外部css、图片等静态资源，他们同样也是一个个htpp请求，重复上面的步骤。
+浏览器根据拿到的资源对页面进行渲染，最终把一个完整的页面呈现给用户。
+
+9.垃圾回收机制的两种方法 
+标记清除法  函数声明变量时 会作为进入环境内存的标记 档有关代码执行完毕 会被作为销毁标记 将变量和引用此变量的函数一并消除
+引用计数法   一个值被变量引用一次会增加一次引用次数 初始引用次数0  当此变量被赋予新值 原值得引用次数减一     再次为0时会被销毁
+10.介绍短路运算符
+与运算&&    左为true 且右为true 返回右值 
+或运算||     返回遇到的第一个true值
+非运算！    true 为false   false 为true
