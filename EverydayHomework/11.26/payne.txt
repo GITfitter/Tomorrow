@@ -1,0 +1,37 @@
+1.video canvas nav footer header aside  css3：文字特效 动画 弹性盒子 2d/3d转换
+object：  create  array ：index of map
+2.x.onclick=function(ev){
+	Var event=ev||window.event;
+}
+
+function getTarget(event){
+	return event.target || event.srcElement;
+} 
+js阻止默认事件的方法是： e.preventdefault() ,IE中：e.returnValue =false
+js阻止默认事件的方法是： e.stopPropagation() ,IE中为：e.cancelbubble =true
+3．结构层 表现层 行为层
+4..作用域链针对于作用域，作用域的特点： 先在自己的变量范围查找，若找不到，就沿着作用域往上找
+原型链针对于构造函数例如先创建了一个函数，然后通过一个变量new了这个函数，那么这个被new出来的函数就会继承创建出来的那个函数的属性，然后如果我访问new出来的这个函数的某个属性，但是我并没有在这个new出来的函数中定义这个变量，那么它就会往上（向创建出它的函数中）查找，这个查找的过程就叫做原型链
+5. Array.prototype.unique = function(){
+    var a = {};
+    for(var i = 0; i < this.length; i++){
+        if(typeof a[this[i]] == "undefined")
+            a[this[i]] = 1;
+    }
+    this.length = 0;
+    for(var i in a)
+        this[this.length] = i;
+    return this;
+}
+var a = [1,2,3];
+var b = [2,3,4];
+var c = a.concat(b).unique();
+
+6.json是一种数据格式，js对象可以说是js的一种引用类型，他们书写方式不同，json可以传输，而js对象不行。
+7.bar 
+Undefined
+Undefined
+bar
+8. 大致可以分为如下7步：1：输入网址；2：发送到DNS服务器，并获取域名对应的web服务器对应的ip地址；3：与web服务器建立TCP连接；4：浏览器向web服务器发送http请求；5：web服务器响应请求，并返回指定url的数据；6：浏览器下载web服务器返回的数据及解析html源文件；7：生成DOM树，解析css和js，渲染页面，直至显示完成；
+9.标记清除和引用计数
+10.一般有与&&和或||。
